@@ -1,6 +1,6 @@
 botoy
 numpy
-PIL
+pillow
 bs4
 httpx
 psutil

@@ -8,7 +8,6 @@ Patrick是一个基于botoy的QQ机器人工具库，封装了一些我认为可
 
 from psutil import Process, NoSuchProcess, process_iter
 from botoy import jconfig, bot
-from prettytable import PrettyTable
 from ptable import FormatTable
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance, ImageFilter
 import numpy as np
@@ -137,7 +136,7 @@ class Patrick:
 			tab_info = tab_info.replace("1", "√").replace("0", "×")
 		space = 10
 		# windows
-		font = ImageFont.truetype('C:\\WINDOWS\\Fonts\\simsun.ttc', 15, encoding='utf-8')
+		font = ImageFont.truetype('Src/MSYH.TTC', 15, encoding='utf-8')
 		# Image模块创建一个图片对象
 		im = Image.new('RGB', (10, 10), (0, 0, 0, 0))
 		draw = ImageDraw.Draw(im, "RGB")
@@ -386,7 +385,7 @@ class Patrick:
 		im = Image
 		draw = ImageDraw.Draw(im)
 		# 设置字体
-		font = ImageFont.truetype('C:/Windows/Fonts/simhei.ttf', int(im.size[1] / 4))  # 自适应字体大小
+		font = ImageFont.truetype('Src/MSYH.TTC', int(im.size[1] / 4))  # 自适应字体大小
 		draw.text((im.size[0] / 4, im.size[1] / 2 - 50), text, font=font, fill=(255, 0, 0))
 		return im
 
