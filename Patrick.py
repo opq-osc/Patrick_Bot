@@ -268,7 +268,7 @@ class Patrick:
 			return None
 
 	# 以下三个函数来自 https://github.com/Aloxaf/MirageTankGo
-	def resize_image(self, im1: Image.Image, im2: Image.Image, mode: str) -> Tuple[Image.Image, Image.Image]:
+	def resize_image(self, im1: Image.Image, im2: Image.Image, mode: str ="RGBA") -> Tuple[Image.Image, Image.Image]:
 		"""
 		统一图像大小
 		"""
@@ -278,14 +278,19 @@ class Patrick:
 		wwidth, wheight = _wimg.size
 		bwidth, bheight = _bimg.size
 
+		r_wimg = wheight/wwidth  # 两张图片的比例
+		r_bimg = bheight/bwidth
+
 		width = max(wwidth, bwidth)
 		height = max(wheight, bheight)
 
 		wimg = Image.new(mode, (width, height), 255)
 		bimg = Image.new(mode, (width, height), 0)
 
-		wimg.paste(_wimg, ((width - wwidth) // 2, (height - wheight) // 2))
-		bimg.paste(_bimg, ((width - bwidth) // 2, (height - bheight) // 2))
+		# wimg.paste(_wimg.resize((width, int(wwidth*r_wimg))), ((width - wwidth) // 2, (height - wheight) // 2))
+		# bimg.paste(_bimg.resize((width, int(bwidth*r_bimg))), ((width - bwidth) // 2, (height - bheight) // 2))
+		wimg.paste(_wimg.resize((width, int(width * r_wimg))), (0, 0))
+		bimg.paste(_bimg.resize((width, int(width * r_bimg))), (0, 0))
 
 		return wimg, bimg
 
@@ -420,6 +425,7 @@ class Patrick:
 				img1 = img1.filter(ImageFilter.GaussianBlur(radius=GaussianBlur))
 			if text:
 				img1 = self.pic_waterprint(img1, text)
+		img1, img2 = self.resize_image(img1, img2)
 		if color:
 			temp_img = self.color_car(img1, img2)
 		else:

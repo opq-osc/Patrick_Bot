@@ -24,9 +24,9 @@ Patrick_Bot（下文简称派大星）是一个基于[botoy](https://github.com/
 
 Todo：
 
+- [x] 幻影坦克图片生成
 - [ ] CSGO皮肤监控插件
 - [ ] 权限管理插件补全
-- [ ] 幻影坦克插件
 - [ ] TBD...
 
 # 二、部署使用
