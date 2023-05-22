@@ -1,5 +1,5 @@
 # Patrick_Bot
-<img src="G:\PY练习\Patrick_Bot\Src\Patrick.png" style="zoom:20%;" />
+<img src="Src\Patrick.png" style="zoom:20%;" />
 
 <div align=center><img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Lord2333/Patrick_Bot?logo=github&amp;label=上次更新&amp;link=https://github.com/Lord2333/Patrick_Bot"><img src="https://img.shields.io/github/license/Lord2333/Patrick_Bot"></br>这里是比奇堡派大星！</div>
 
