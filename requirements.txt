@@ -1,0 +1,6 @@
+botoy
+numpy
+PIL
+bs4
+httpx
+psutil
